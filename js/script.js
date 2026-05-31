@@ -5,7 +5,7 @@ const URL_API = "https://script.google.com/macros/s/AKfycbxCIk31wW7OvWpN0MvSqsPk
 document.getElementById('miFormulario').addEventListener('submit', async (e) => {
     e.preventDefault();
     const nombre = document.getElementById('nombre').value;
-    const mensaje = document.getElementById('folio').value;
+    const folio = document.getElementById('folio').value;
 
     await fetch(URL_API, {
         method: 'POST',
