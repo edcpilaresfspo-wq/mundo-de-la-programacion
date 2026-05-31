@@ -1,0 +1,43 @@
+body {
+  background-color: cadetblue;
+  font-family: sans-serif;
+  text-align: center;
+  /*max-width: 500px;
+  margin: 40px auto;
+  padding: 20px; */
+}
+
+h1{
+  font-size: 40px;
+  color: darkslategrey;
+}
+
+h2{
+  color: dimgrey;
+}
+
+main{
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+form, .datos {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.pie{
+  color: aliceblue;
+}
