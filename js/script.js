@@ -7,22 +7,22 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     const nombre = document.getElementById('nombre').value.trim();
     const folio = document.getElementById('folio').value.trim();
 
-    // 1. Validar si el código (mensaje) ya existe en Google Sheets
+    // Valida si el código (folio) ya existe en Google Sheets
     try {
         const respuestaValidacion = await fetch(`${URL_API}?verificarCodigo=${encodeURIComponent(folio)}`);
         const resultado = await respuestaValidacion.json();
 
         if (resultado.existe) {
-            alert(`El folio ingresado ( "${folio}" ) ya esta registrado. Valida si ya te registraste y sino lo estas intentalo nuevamente con tu folio.`);
+            alert(`El folio ingresado ( "${folio}" ) ya esta registrado. Valida tu nombre en la lista de registrados y sino estas intenta nuevamente realizar el registro asegurandote de colocar tu folio correcto.`);
             return; // Detiene el registro
             }
         } catch (error) {
-            console.error("Error al validar código:", error);
-            alert("Error al verificar el código. Inténtalo de nuevo.");
+            console.error("Error al validar código (folio):", error);
+            alert("Error al verificar el código (folio). Inténtalo de nuevo.");
             return;
         }
 
-    // 2. Si el código está libre, se guarda
+    // Si el código (folio) no esta en Google Sheets , se guarda
     await fetch(URL_API, {
         method: 'POST',
         mode: 'no-cors',
@@ -30,7 +30,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
         body: JSON.stringify({ nombre, folio })
     });
 
-    alert('¡Datos enviados con éxito!');
+    alert('¡Datos del Usuario registrados con éxito!');
     document.getElementById('miFormulario').reset();
     cargarDatos();
 });
