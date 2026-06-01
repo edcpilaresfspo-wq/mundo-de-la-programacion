@@ -16,6 +16,74 @@ h2{
   color: dimgrey;
 }
 
+.nav_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Lista de enlaces */
+.nav_bar .nav_links {
+    display: flex;
+    list-style: none;
+}
+
+.nav_bar .nav_links li {
+    margin-left: 60px;
+}
+
+.nav_bar .nav_links a {
+    color: darkslategrey;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto subrayado al pasar el cursor */
+.nav_bar .nav_links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: dimgrey; /*#3498db*/
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.nav_bar .nav_links a:hover {
+    color: dimgrey;
+}
+
+.nav_bar .nav_links a:hover::after {
+    width: 100%;
+}
+
+/* Estilo para la página actual */
+.nav_bar .nav_links a.active {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Diseño responsivo (Para celulares) */
+@media (max-width: 768px) {
+    .nav_bar {
+        padding: 20px 20px;
+    }
+
+    .nav_bar .nav_links {
+        display: none; /* Ocultar en pantallas pequeñas */
+    }
+}
+
 main{
   font-family: sans-serif;
   max-width: 500px;
@@ -38,6 +106,18 @@ input, button {
   box-sizing: border-box;
 }
 
-.pie{
+footer{
   color: aliceblue;
+  border: 2px solid black;
+  border-radius: 30px;
+}
+
+.detalles_pie{
+  color: darkslategrey;
+  display: flex;
+  justify-content: center;
+}
+
+.redes, .sitios{
+  padding: 1px 30px;
 }
