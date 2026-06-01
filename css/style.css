@@ -53,7 +53,7 @@ h2{
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: dimgrey; /*#3498db*/
+    background-color: dimgrey;
     left: 0;
     bottom: 0;
     transition: width 0.3s ease;
