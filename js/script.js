@@ -32,10 +32,24 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
 
     alert('¡Datos del Usuario registrados con éxito!');
     document.getElementById('miFormulario').reset();
-    cargarDatos();
+    // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
+    document.getElementById("miFormulario").style.display = "none";
+    document.getElementById("mensaje_bienvenida").style.display = "block";
+    mensajeBienvenida(nombre);
+    /*cargarDatos();*/
 });
 
+//mensaje de bienvenida
+function mensajeBienvenida(nom){
+  /*window.location.href = "./pages/juego.html";*/
+  var mensaje = `Hola ${nom}. Bienvenido(a) a este gran mundo de la programación. En este podras desarrollar habilidades interesantes.`;
+  const contenedor = document.getElementById('mensaje_bienvenida');
+  contenedor.innerHTML = mensaje;
+  cargarDatos();
+}
+
 // Leer y mostrar datos
+/*
 async function cargarDatos() {
     try {
         const res = await fetch(URL_API);
@@ -57,4 +71,4 @@ async function cargarDatos() {
     }
 }
 
-cargarDatos();
+cargarDatos();*/
