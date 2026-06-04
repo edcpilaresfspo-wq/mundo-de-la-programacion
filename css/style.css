@@ -130,3 +130,26 @@ footer{
 .redes, .sitios{
   padding: 1px 30px;
 }
+
+.sitios a{
+  color: darkslategrey;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.sitios a::after {
+    width: 0%;
+    height: 2px;
+    background-color: dimgrey;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.sitios a:hover {
+    color: dimgrey;
+    text-decoration: underline;
+}
