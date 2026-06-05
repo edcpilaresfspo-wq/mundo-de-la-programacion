@@ -115,6 +115,23 @@ input, button {
   display: none;
 }
 
+#tituloJuego{
+  display: none;
+}
+
+#mensaje_juego{
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+  display: none;
+}
+
+#juegoBienvenido{
+  display: none;
+}
+
 footer{
   color: aliceblue;
   border: 2px solid black;
