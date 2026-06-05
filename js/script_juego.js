@@ -7,30 +7,39 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     /*const nombre = document.getElementById('nombre').value.trim();*/
     const folio = document.getElementById('folio').value.trim();
 
-    // Valida si el código (folio) ya existe en Google Sheets
-    try {
-        const respuestaValidacion = await fetch(`${URL_API}?verificarFolio=${encodeURIComponent(folio)}`);
-        const resultado = await respuestaValidacion.json();
+    let copiaFolio = folio;
+    copiaFolio = copiaFolio.toUpperCase();
 
-        if (!resultado.existe) {
-            alert(`El folio ingresado ( "${folio}" ) No esta registrado.`);
-            return; // Detiene el acceso al juego
-          }
-        } catch (error) {
-            console.error("Error al validar código (folio):", error);
-            alert("Error al verificar el código (folio). Inténtalo de nuevo.");
-            return;
-        }
+    if(folio != copiaFolio){
+        alert("El folio ingresado, No coincide con el formato adecuado. Si no recuerda el formato puede validardo en la nota correspondiente al campo Folio Pilares del formulario de registro de la pagina principal (menu: Inicio)");
+    }else{
+        // Valida si el código (folio) ya existe en Google Sheets
+        try {
+            const respuestaValidacion = await fetch(`${URL_API}?verificarFolio=${encodeURIComponent(folio)}`);
+            const resultado = await respuestaValidacion.json();
+    
+            if (!resultado.existe) {
+                alert(`El folio ingresado ( "${folio}" ) No esta registrado.`);
+                return; // Detiene el acceso al juego
+              }
+            } catch (error) {
+                console.error("Error al validar código (folio):", error);
+                alert("Error al verificar el código (folio). Inténtalo de nuevo.");
+                return;
+            }
+    
+        alert(`El folio ingresado ( "${folio}" ) esta registrado. Puede empezar a Jugar. Suerte!`);
+        document.getElementById('miFormulario').reset();
+        // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
+        document.getElementById("tituloDatoAcceso").style.display = "none";
+        document.getElementById("miFormulario").style.display = "none";
+        document.getElementById("tituloJuego").style.display = "block";
+        document.getElementById("mensaje_juego").style.display = "block";
+        document.getElementById("juegoBienvenidos").style.display = "block";
+        mensajeJuego();
+    }
 
-    alert(`El folio ingresado ( "${folio}" ) esta registrado. Puede empezar a Jugar. Suerte!`);
-    document.getElementById('miFormulario').reset();
-    // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
-    document.getElementById("tituloDatoAcceso").style.display = "none";
-    document.getElementById("miFormulario").style.display = "none";
-    document.getElementById("tituloJuego").style.display = "block";
-    document.getElementById("mensaje_juego").style.display = "block";
-    document.getElementById("juegoBienvenidos").style.display = "block";
-    mensajeJuego();
+    
 });
 
 //mensaje de bienvenida
