@@ -6,6 +6,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     e.preventDefault();
     const nombre = document.getElementById('nombre').value.trim();
     const folio = document.getElementById('folio').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const grupo = document.getElementById('grupo').value.trim();
 
     // Valida si el código (folio) ya existe en Google Sheets
     try {
@@ -27,7 +29,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, folio })
+        body: JSON.stringify({ nombre, folio, correo, grupo })
     });
 
     alert('¡Datos del Usuario registrados con éxito!');
