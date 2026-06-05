@@ -99,7 +99,7 @@ form, .datos {
   text-align: left;
 }
 
-input, button {
+input, select, button {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
