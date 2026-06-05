@@ -38,8 +38,8 @@ function mensajeJuego(){
   /*window.location.href = "./pages/juego.html";*/
   var mensaje = `Este juego consiste en validar tus conocimientos básicos para este gran mundo de la programación. En el centro de la 
                  pantalla, que esta debajo de este mensaje, aparece una bandera verde la cual debes presionar para empezar a jugar, 
-                 a partir de que presiones la bandera verde empezara la diversion y deberas segir las indicaciones o instrucciones o
-                 enunciados (concepto que veras mucho en programación). Presta mucha atencion y Suerte!`;
+                 a partir de que presiones la bandera verde empezara la diversión y deberás seguir las indicaciones o instrucciones o
+                 enunciados (concepto que veras mucho en programación). ¡Presta mucha atención y Suerte!`;
   const contenedor = document.getElementById('mensaje_juego');
   contenedor.innerHTML = mensaje;
 }
