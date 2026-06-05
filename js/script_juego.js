@@ -16,7 +16,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
             alert(`El folio ingresado ( "${folio}" ) esta registrado. Puede empezar a Jugar. Suerte!`);
           }else{
             alert(`El folio ingresado ( "${folio}" ) No esta registrado.`);
-            return; // Detiene el registro
+            return; // Detiene el acceso al juego
           }
         } catch (error) {
             console.error("Error al validar código (folio):", error);
@@ -26,9 +26,11 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
 
     document.getElementById('miFormulario').reset();
     // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
-    document.getElementById("tituloFormulario").style.display = "none";
+    document.getElementById("tituloAcceso").style.display = "none";
     document.getElementById("miFormulario").style.display = "none";
+    document.getElementById("tituloJuego").style.display = "block";
     document.getElementById("mensaje_juego").style.display = "block";
+    document.getElementById("juegoBienvenidos").style.display = "block";
     mensajeJuego();
 });
 
