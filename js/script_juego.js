@@ -26,7 +26,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
 
     document.getElementById('miFormulario').reset();
     // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
-    document.getElementById("tituloAcceso").style.display = "none";
+    document.getElementById("tituloDatoAcceso").style.display = "none";
     document.getElementById("miFormulario").style.display = "none";
     document.getElementById("tituloJuego").style.display = "block";
     document.getElementById("mensaje_juego").style.display = "block";
@@ -37,7 +37,10 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
 //mensaje de bienvenida
 function mensajeJuego(){
   /*window.location.href = "./pages/juego.html";*/
-  var mensaje = `Bienvenido(a) a esta seccion de juego. En este podras validar tus conocimientos básicos.`;
+  var mensaje = `Este juego consiste en validar tus conocimientos básicos para este gran mundo de la programación. En el centro de la 
+                 pantalla, que esta debajo de este mensaje, aparece una bandera verde la cual debes presionar para empezar a jugar, 
+                 a partir de que presiones la bandera verde empezara la diversion y deberas segir las indicaciones o instrucciones o
+                 enunciados (concepto que veras mucho en programación). Presta mucha atencion y Suerte!`;
   const contenedor = document.getElementById('mensaje_juego');
   contenedor.innerHTML = mensaje;
 }
