@@ -12,9 +12,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
         const respuestaValidacion = await fetch(`${URL_API}?verificarFolio=${encodeURIComponent(folio)}`);
         const resultado = await respuestaValidacion.json();
 
-        if (resultado.existe) {
-            alert(`El folio ingresado ( "${folio}" ) esta registrado. Puede empezar a Jugar. Suerte!`);
-          }else{
+        if (!resultado.existe) {
             alert(`El folio ingresado ( "${folio}" ) No esta registrado.`);
             return; // Detiene el acceso al juego
           }
@@ -24,6 +22,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
             return;
         }
 
+    alert(`El folio ingresado ( "${folio}" ) esta registrado. Puede empezar a Jugar. Suerte!`);
     document.getElementById('miFormulario').reset();
     // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
     document.getElementById("tituloDatoAcceso").style.display = "none";
