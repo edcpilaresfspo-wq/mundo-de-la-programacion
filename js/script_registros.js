@@ -13,7 +13,7 @@ async function cargarDatos() {
 
         // Renderiza correctamente el nombre [0] y el mensaje [1] de cada fila
         contenedor.innerHTML = datos.map(fila => `
-            <p><strong>${fila[0]}:</strong> ${fila[1]}</p>
+            <p><strong>${fila[0]}:</strong> ${fila[3]}</p>
         `).join('');
     } catch (error) {
         console.error("Error al cargar:", error);
