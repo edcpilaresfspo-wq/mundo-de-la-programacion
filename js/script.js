@@ -1,8 +1,12 @@
 // URL de Google APPS Script
 const URL_API = "https://script.google.com/macros/s/AKfycbxCIk31wW7OvWpN0MvSqsPkl2Q5UUFRJ1MOA5EsZUXXUQhIvlnyTU2TPY48HAoB1BUsEQ/exec";
+let diaSemana = "Nada";
 let dia = 0;
 let mes = 0;
 let año = 0;
+let horas = 0;
+let minutos = 0;
+let segundos = 0;
 function actualizarReloj(){
     // CREAR FECHA
     const ahora = new Date();
@@ -12,14 +16,14 @@ function actualizarReloj(){
     const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
     // OBTENER DATOS
-    let diaSemana = dias[ahora.getDay()];
+    diaSemana = dias[ahora.getDay()];
     dia = ahora.getDate();
     mes = meses[ahora.getMonth()];
     año = ahora.getFullYear();
 
-    let horas = ahora.getHours();
-    let minutos = ahora.getMinutes();
-    let segundos = ahora.getSeconds();
+    horas = ahora.getHours();
+    minutos = ahora.getMinutes();
+    segundos = ahora.getSeconds();
 
     // AGREGAR 0 SI ES MENOR A 10
     horas = horas < 10 ? "0" + horas : horas;
@@ -46,6 +50,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     const folio = document.getElementById('folio').value.trim();
     const correo = document.getElementById('correo').value.trim();
     const grupo = document.getElementById('grupo').value.trim();
+    const fechaActual = document.getElementById('fecha').value.trim();
+    const horaActual = document.getElementById('hora').value.trim();
     const nomenclaturaGrupo = "Ninguna";
 
     if(grupo === "Entre_semana"){
@@ -53,7 +59,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     }else{
         nomenclaturaGrupo = "3"+mes+""+año;
     }
-    
+
+    const datoFechaHora = horaActual+" "+hohoraActual;
 
     // Valida si el código (folio) ya existe en Google Sheets
     try {
@@ -75,7 +82,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, folio, correo, grupo })
+        body: JSON.stringify({ nombre, folio, correo, grupo, nomenclaturaGrupo, datoFechaHora })
     });
 
     alert('¡Datos del Usuario registrados con éxito!');
