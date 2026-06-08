@@ -3,6 +3,7 @@ const URL_API = "https://script.google.com/macros/s/AKfycbxCIk31wW7OvWpN0MvSqsPk
 let diaSemana = "Nada";
 let dia = 0;
 let mes = 0;
+let mesNum = 0;
 let año = 0;
 let horas = 0;
 let minutos = 0;
@@ -18,7 +19,8 @@ function actualizarReloj(){
     // OBTENER DATOS
     diaSemana = dias[ahora.getDay()];
     dia = ahora.getDate();
-    mes = meses[ahora.getMonth()];
+    mesNum = ahora.getMonth();
+    mes = meses[mesNum];
     año = ahora.getFullYear();
 
     horas = ahora.getHours();
@@ -53,14 +55,14 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     const fechaActual = document.getElementById('fecha').value.trim();
     const horaActual = document.getElementById('hora').value.trim();
     const nomenclaturaGrupo = "Ninguna";
-
+    let añoCorto = +String(año).slice(-2);
     if(grupo === "Entre_semana"){
-        nomenclaturaGrupo = "1"+mes+""+año;
+        nomenclaturaGrupo = "1"+mes+""+añoCorto;
     }else{
-        nomenclaturaGrupo = "3"+mes+""+año;
+        nomenclaturaGrupo = "3"+mes+""+añoCorto;
     }
 
-    const datoFechaHora = horaActual+" "+hohoraActual;
+    const datoFechaHora = dia+"-"+mesNum+"-"+año+" "+horaActual;
 
     // Valida si el código (folio) ya existe en Google Sheets
     try {
