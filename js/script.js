@@ -57,12 +57,29 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     let nomenclaturaGrupo = "Ninguna";
     let añoCorto = +String(año).slice(-2);
     if(grupo === "Entre_semana"){
-        nomenclaturaGrupo = "1"+mes+""+añoCorto;
-    }else if(grupo === "Fin_de_semana"){ 
-        nomenclaturaGrupo = "3"+mes+""+añoCorto;
+        if(mesNum < 10)
+        {
+            nomenclaturaGrupo = "G10"+mesNum+""+añoCorto;
+        }else{
+            nomenclaturaGrupo = "G1"+mesNum+""+añoCorto;
+        }
+        
+    }else if(grupo === "Fin_de_semana"){
+        if(mesNum < 10)
+        {
+            nomenclaturaGrupo = "G30"+mesNum+""+añoCorto;
+        }else{
+            nomenclaturaGrupo = "G3"+mesNum+""+añoCorto;
+        }        
     }
-
-    const datoFechaHora = dia+"-"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
+    let datoFechaHora = "Nada";
+    if(dia < 10 && mesNum >= 10){
+        datoFechaHora = "0"+dia+"-"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
+    }else if(dia >= 10 && mesNum < 10){
+        datoFechaHora = dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
+    }else if(dia < 10 && mesNum < 10){
+        datoFechaHora = "0"+dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
+    }
 
     // Valida si el código (folio) ya existe en Google Sheets
     try {
@@ -105,7 +122,7 @@ function mensajeBienvenida(nom){
   ello podras desarrollar habilidades interesantes que te permitiran abrirte paso y crecer como un gran programador.
   En esta pagina, ya en este momento, puedes validar que estas en la lista de usuarios registrados (en el menu Registrados) y tambien puedes
   ingresar a un juego realizado especialmente para ti en estos primeros pasos (el cual puedes ubicar en el menu: Juego). Te recomiendo, para
-  que comienes con buen pie, que siempre sigas las indicaciones.`;
+  que comiences con buen pie, que siempre sigas las indicaciones.`;
   const contenedor = document.getElementById('mensaje_bienvenida');
   contenedor.innerHTML = mensaje;
   cargarDatos();
