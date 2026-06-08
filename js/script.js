@@ -54,7 +54,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     const grupo = document.getElementById('grupo').value.trim();
     const fechaActual = document.getElementById('fecha').value.trim();
     const horaActual = document.getElementById('hora').value.trim();
-    const nomenclaturaGrupo = "Ninguna";
+    let nomenclaturaGrupo = "Ninguna";
     let añoCorto = +String(año).slice(-2);
     if(grupo === "Entre_semana"){
         nomenclaturaGrupo = "1"+mes+""+añoCorto;
