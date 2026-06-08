@@ -56,6 +56,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     const horaActual = document.getElementById('hora').value.trim();*/
     let nomenclaturaGrupo = "Ninguna";
     let añoCorto = +String(año).slice(-2);
+    mesNum = mesNum + 1; // para obtener el mes real
     if(grupo === "Entre_semana"){
         if(mesNum < 10)
         {
@@ -74,11 +75,11 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     }
     let datoFechaHora = "Nada";
     if(dia < 10 && mesNum >= 10){
-        datoFechaHora = "0"+dia+"-"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
+        datoFechaHora = "0"+dia+"-"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
     }else if(dia >= 10 && mesNum < 10){
-        datoFechaHora = dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
+        datoFechaHora = dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
     }else if(dia < 10 && mesNum < 10){
-        datoFechaHora = "0"+dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
+        datoFechaHora = "0"+dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
     }
 
     // Valida si el código (folio) ya existe en Google Sheets
