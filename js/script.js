@@ -52,8 +52,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     const folio = document.getElementById('folio').value.trim();
     const correo = document.getElementById('correo').value.trim();
     const grupo = document.getElementById('grupo').value.trim();
-    /*const fechaActual = document.getElementById('fecha').value.trim();*/
-    const horaActual = document.getElementById('hora').value.trim();
+    /*const fechaActual = document.getElementById('fecha').value.trim();
+    const horaActual = document.getElementById('hora').value.trim();*/
     let nomenclaturaGrupo = "Ninguna";
     let añoCorto = +String(año).slice(-2);
     if(grupo === "Entre_semana"){
@@ -62,7 +62,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
         nomenclaturaGrupo = "3"+mes+""+añoCorto;
     }
 
-    const datoFechaHora = dia+"-"+mesNum+"-"+año+" "+horaActual;
+    const datoFechaHora = dia+"-"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos+":";
 
     // Valida si el código (folio) ya existe en Google Sheets
     try {
