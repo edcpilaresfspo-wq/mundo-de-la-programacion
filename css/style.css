@@ -126,9 +126,12 @@ main{
   max-width: 700px;
   margin: 40px auto;
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 form, .datos {
+  max-width: 500px;
   background: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
@@ -137,6 +140,7 @@ form, .datos {
 }
 
 input, select, button {
+  max-width: 500px;
   width: 100%;
   padding: 10px;
   margin: 8px 0;
