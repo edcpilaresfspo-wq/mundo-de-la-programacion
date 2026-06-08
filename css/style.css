@@ -130,6 +130,12 @@ main{
   justify-content: center;
 }
 
+.juegoBienve{
+  width: 685px;
+  height: 562px;
+  border-radius: 8px;
+}
+
 form, .datos {
   max-width: 500px;
   background: #f4f4f4;
