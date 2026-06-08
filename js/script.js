@@ -58,7 +58,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     let añoCorto = +String(año).slice(-2);
     if(grupo === "Entre_semana"){
         nomenclaturaGrupo = "1"+mes+""+añoCorto;
-    }else{
+    }else if(grupo === "Fin_de_semana"){ 
         nomenclaturaGrupo = "3"+mes+""+añoCorto;
     }
 
