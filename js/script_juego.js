@@ -1,5 +1,6 @@
 // URL de Google APPS Script
 const URL_API = "https://script.google.com/macros/s/AKfycbxCIk31wW7OvWpN0MvSqsPkl2Q5UUFRJ1MOA5EsZUXXUQhIvlnyTU2TPY48HAoB1BUsEQ/exec";
+const URL_API2 ="https://script.google.com/macros/s/AKfycbxWV44wm4vCIv_FvDLJCWUoF9ZA0InEihLIICzZJhrqhVim0vbVrWgF_RLaCUbc16k/exec";
 
 // Guardar datos
 document.getElementById('miFormulario').addEventListener('submit', async (e) => {
@@ -29,6 +30,12 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
             }
     
         alert(`El folio ingresado ( "${folio}" ) esta registrado. Puede empezar a Jugar. Suerte!`);
+        await fetch(URL_API2, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ folio })
+        });
         document.getElementById('miFormulario').reset();
         // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
         document.getElementById("tituloDatoAcceso").style.display = "none";
