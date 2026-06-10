@@ -5,6 +5,16 @@ const URL_API2 ="https://script.google.com/macros/s/AKfycbxWV44wm4vCIv_FvDLJCWUo
 // Guardar datos
 document.getElementById('miFormulario').addEventListener('submit', async (e) => {
     e.preventDefault();
+    // Buscamos el botón dentro del formulario y lo congelamos de inmediato
+    const boton = e.target.querySelector('button[type="submit"]');
+
+    // Si el botón ya está deshabilitado, salimos para evitar la doble ejecución
+    if (boton.disabled) return;
+
+    boton.disabled = true;
+    const textoOriginal = boton.innerText;
+    boton.innerText = "Validando Acceso...";
+    
     /*const nombre = document.getElementById('nombre').value.trim();*/
     const folio = document.getElementById('folio').value.trim();
 
@@ -21,6 +31,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     
             if (!resultado.existe) {
                 alert(`El folio ingresado ( "${folio}" ) No esta registrado.`);
+                boton.disabled = false;
+                boton.innerText = textoOriginal;
                 return; // Detiene el acceso al juego
               }
             } catch (error) {
@@ -37,6 +49,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
             body: JSON.stringify({ folio })
         });
         document.getElementById('miFormulario').reset();
+        boton.disabled = false;
+        boton.innerText = textoOriginal;
         // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
         document.getElementById("tituloDatoAcceso").style.display = "none";
         document.getElementById("miFormulario").style.display = "none";
