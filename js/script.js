@@ -48,6 +48,15 @@ actualizarReloj();
 // Guardar datos
 document.getElementById('miFormulario').addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const boton = e.target.querySelector('button[type="submit"]');
+    
+    if (boton.disabled) return; 
+    
+    boton.disabled = true;
+    const textoOriginal = boton.innerText;
+    boton.innerText = "Guardando...";
+
     const nombre = document.getElementById('nombre').value.trim();
     const folio = document.getElementById('folio').value.trim();
     const correo = document.getElementById('correo').value.trim();
@@ -89,6 +98,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
 
         if (resultado.existe) {
             alert(`El folio ingresado ( "${folio}" ) ya esta registrado. Valida tu nombre en la lista de registrados y sino estas intenta nuevamente realizar el registro asegurandote de colocar tu folio correcto.`);
+            boton.disabled = false;
+            boton.innerText = textoOriginal;
             return; // Detiene el registro
             }
         } catch (error) {
@@ -106,6 +117,8 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
     });
 
     alert('¡Datos del Usuario registrados con éxito!');
+    boton.disabled = false;
+    boton.innerText = textoOriginal;
     document.getElementById('miFormulario').reset();
     // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
     document.getElementById("tituloFormulario").style.display = "none";
