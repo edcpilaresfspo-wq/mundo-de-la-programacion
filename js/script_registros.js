@@ -10,11 +10,31 @@ async function cargarDatos() {
             contenedor.innerHTML = "No hay datos guardados aún.";
             return;
         }
+        // cargar datos donde se renderiza correctamente el nombre [0]
+        contenedor.innerHTML = `
+              <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
+                  <thead>
+                      <tr>
+                          <th>Nombre</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                      ${datos.map(fila => `
+                          <tr>
+                              <td><strong>${fila[0]}</strong></td>
+
+                          </tr>
+                      `).join('')}
+                  </tbody>
+              </table>
+          `;
+        }
 
         // Renderiza correctamente el nombre [0] y el mensaje [1] de cada fila
-        contenedor.innerHTML = datos.map(fila => `
+       /* contenedor.innerHTML = datos.map(fila => `
             <p><strong>${fila[0]}:</strong> ${fila[3]}</p>
-        `).join('');
+        `).join('');*/
     } catch (error) {
         console.error("Error al cargar:", error);
         document.getElementById('listaDatos').innerHTML = "Error al conectar con la base de datos.";
