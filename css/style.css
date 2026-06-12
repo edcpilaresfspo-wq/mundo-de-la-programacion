@@ -157,6 +157,17 @@ input, select, button {
   box-sizing: border-box;
 }
 
+.datos table th,
+.datos table td{
+  border: 1px solid #ccc;
+}
+
+.datos table th{
+  background: cadetblue;
+  color: darkslategrey;
+  font-size: 18px;
+}
+
 #mensaje_bienvenida{
   background: #f4f4f4;
   padding: 20px;
