@@ -29,7 +29,7 @@ async function cargarDatos() {
                   </tbody>
               </table>
           `;
-        }
+        
 
         // Renderiza correctamente el nombre [0] y el mensaje [1] de cada fila
        /* contenedor.innerHTML = datos.map(fila => `
