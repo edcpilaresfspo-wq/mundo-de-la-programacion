@@ -5,12 +5,19 @@ async function cargarDatos() {
         const res = await fetch(URL_API);
         const datos = await res.json();
         const contenedor = document.getElementById('listaDatos');
+        const contenedorDD = document.getElementById('datosDocente');
+        var valorBuscado1 = "Entre_semana";
+        var valorBuscado2 = "Fin_de_semana";
         
         if(datos.length === 0) {
             
             contenedor.innerHTML = "No hay datos guardados aún.";
             return;
         }
+        contenedorDD.innerHTML = `
+            <p><strong>${datos[0][0]}: </strong> ${datos[0][3]}</p>
+        `;
+        const filasFiltradas = datos.filter(fila => fila[3] === valorBuscado1 || fila[3] === valorBuscado2);
         // cargar datos donde se renderiza correctamente el nombre [0]
         contenedor.innerHTML = `
               <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
@@ -21,7 +28,7 @@ async function cargarDatos() {
                       </tr>
                   </thead>
                   <tbody>
-                      ${datos.map(fila => `
+                      ${filasFiltradas.map(fila => `
                           <tr>
                               <td><strong>${fila[0]}</strong></td>
 
