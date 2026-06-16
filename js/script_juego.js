@@ -54,9 +54,11 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
         // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
         document.getElementById("tituloDatoAcceso").style.display = "none";
         document.getElementById("miFormulario").style.display = "none";
-        document.getElementById("tituloJuego").style.display = "block";
+        document.getElementById("tituloJuego_1").style.display = "block";
         document.getElementById("mensaje_juego").style.display = "block";
         document.getElementById("juegoBienvenidos").style.display = "block";
+        document.getElementById("tituloJuego_2").style.display = "block";
+        document.getElementById("juegoAlgoritmos").style.display = "block";
         mensajeJuego();
     }
 
