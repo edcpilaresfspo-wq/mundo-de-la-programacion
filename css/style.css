@@ -183,7 +183,11 @@ input, select, button {
   display: none;
 }
 
-#tituloJuego{
+#tituloJuego_1{
+  display: none;
+}
+
+#tituloJuego_2{
   display: none;
 }
 
@@ -198,6 +202,10 @@ input, select, button {
 }
 
 #juegoBienvenidos{
+  display: none;
+}
+
+#juegoAlgoritmos{
   display: none;
 }
 
