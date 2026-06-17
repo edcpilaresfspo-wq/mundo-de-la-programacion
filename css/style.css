@@ -225,7 +225,11 @@ footer{
   padding: 1px 30px;
 }
 
-.sitios a, .informacion{
+.contenido_ayuda a{
+  font-size: 19px;  
+}
+
+.sitios a, .contenido_ayuda a{
   color: darkslategrey;
   text-decoration: none;
   font-weight: 500;
@@ -234,7 +238,7 @@ footer{
   transition: color 0.3s ease;
 }
 
-.sitios a::after {
+.sitios a::after, .contenido_ayuda a::after{
     width: 0%;
     height: 2px;
     background-color: dimgrey;
@@ -243,7 +247,7 @@ footer{
     transition: width 0.3s ease;
 }
 
-.sitios a:hover {
+.sitios a:hover, .contenido_ayuda a:hover{
     color: dimgrey;
     text-decoration: underline;
 }
