@@ -33,12 +33,10 @@ function actualizarReloj(){
     segundos = segundos < 10 ? "0" + segundos : segundos;
 
     // MOSTRAR FECHA
-    document.getElementById("fecha").textContent =
-        `${diaSemana}, ${dia} de ${mes} de ${año}`;
+    document.getElementById("fecha").textContent = `${diaSemana}, ${dia} de ${mes} de ${año}`;
 
     // MOSTRAR HORA
-    document.getElementById("hora").textContent =
-        `Hora:${horas}:${minutos}:${segundos}`;
+    document.getElementById("hora").textContent = `Hora:${horas}:${minutos}:${segundos}`;
 }
 // ACTUALIZAR CADA SEGUNDO
 setInterval(actualizarReloj, 1000);
