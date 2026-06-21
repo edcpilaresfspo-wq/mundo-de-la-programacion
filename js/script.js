@@ -43,14 +43,25 @@ setInterval(actualizarReloj, 1000);
 // INICIAR RELOJ
 actualizarReloj();
 
+// Boton para registrar Datos
+const botonRegistro = document.getElementById('btnRegistro');
+// Muestra los campos del formulario de registro
+botonRegistro.addEventListener('click', () => {
+  document.getElementById("tituloFormulario").style.display = "block";
+  document.getElementById("miFormulario").style.display = "block";
+  document.getElementById("contenedor_collage_unidades").style.display = "none";
+  document.getElementById("imaUnidad0").style.display = "none";
+});
+
+
 // Guardar datos
 document.getElementById('miFormulario').addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const boton = e.target.querySelector('button[type="submit"]');
-    
-    if (boton.disabled) return; 
-    
+
+    if (boton.disabled) return;
+
     boton.disabled = true;
     const textoOriginal = boton.innerText;
     boton.innerText = "Guardando...";
@@ -71,14 +82,14 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
         }else{
             nomenclaturaGrupo = "G1"+mesNum+""+añoCorto;
         }
-        
+
     }else if(grupo === "Fin_de_semana"){
         if(mesNum < 10)
         {
             nomenclaturaGrupo = "G30"+mesNum+""+añoCorto;
         }else{
             nomenclaturaGrupo = "G3"+mesNum+""+añoCorto;
-        }        
+        }
     }
     let datoFechaHora = "Nada";
     if(dia < 10 && mesNum >= 10){
@@ -128,7 +139,7 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
 //mensaje de bienvenida
 function mensajeBienvenida(nom){
   /*window.location.href = "./pages/juego.html";*/
-  var mensaje = `Hola ${nom}. Bienvenido(a) a este gran mundo de la programación. En este mundo prodras aprender sobre temas como Algoritmos, 
+  var mensaje = `Hola ${nom}. Bienvenido(a) a este gran mundo de la programación. En este mundo prodras aprender sobre temas como Algoritmos,
   Lenguajes de Programacion, Variables, Operadores, Condicionales, Bucles y mucho mas, ademas tambien tendras la oportunidad de aprender
   a utilizar aplicaciones, que mas adelante a algunas les conoceras como editores o IDEs, como lo son Scratch, PSeInt, Atom, etc, con todo
   ello podras desarrollar habilidades interesantes que te permitiran abrirte paso y crecer como un gran programador.
