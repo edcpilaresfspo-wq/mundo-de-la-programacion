@@ -3,7 +3,7 @@ const URL_API = "https://script.google.com/macros/s/AKfycbxCIk31wW7OvWpN0MvSqsPk
 const URL_API2 ="https://script.google.com/macros/s/AKfycbxWV44wm4vCIv_FvDLJCWUoF9ZA0InEihLIICzZJhrqhVim0vbVrWgF_RLaCUbc16k/exec";
 
 // Guardar datos
-document.getElementById('miFormulario').addEventListener('submit', async (e) => {
+document.getElementById('miFormularioDAJuego').addEventListener('submit', async (e) => {
     e.preventDefault();
     // Buscamos el botón dentro del formulario y lo congelamos de inmediato
     const boton = e.target.querySelector('button[type="submit"]');
@@ -48,12 +48,12 @@ document.getElementById('miFormulario').addEventListener('submit', async (e) => 
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ folio })
         });
-        document.getElementById('miFormulario').reset();
+        document.getElementById('miFormularioDAJuego').reset();
         boton.disabled = false;
         boton.innerText = textoOriginal;
         // Cambia el estilo a 'none' para que no sea visible, en caso de que quisira ser visible seria 'block'
         document.getElementById("tituloDatoAcceso").style.display = "none";
-        document.getElementById("miFormulario").style.display = "none";
+        document.getElementById("miFormularioDAJuego").style.display = "none";
         document.getElementById("tituloJuego_1").style.display = "block";
         document.getElementById("mensaje_juego").style.display = "block";
         document.getElementById("juegoBienvenidos").style.display = "block";
