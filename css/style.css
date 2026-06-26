@@ -317,3 +317,19 @@ footer{
     color: dimgrey;
     text-decoration: underline;
 }
+
+.separador{
+  border: none;
+  border-top: 2px solid darkslategrey;  /*#3498db*/
+  margin: 40px 0;
+  width: 100%;
+}
+
+.parentesis{
+  color: dimgrey;
+}
+
+.correo{
+  font-size: 19px;
+  color: darkslategrey;
+}
