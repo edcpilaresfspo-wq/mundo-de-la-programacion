@@ -39,7 +39,6 @@ document.getElementById('miFormularioDAsistencia').addEventListener('submit', as
               boton.innerText = textoOriginal;
               return; // Detiene el registro
             }else{
-              alert("dato de la hoja: "+resultado.datos.Primer_Nombre+" , dato del formulario: "+primerNombre);
               if (resultado.datos.Primer_Nombre !== primerNombre) {
                 alert("El Primer Nombre Ingresado no coincide con el registrado.");
                 boton.disabled = false;
