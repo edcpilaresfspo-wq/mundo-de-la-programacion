@@ -59,6 +59,10 @@ document.getElementById('miFormularioDAJuego').addEventListener('submit', async 
         document.getElementById("juegoBienvenidos").style.display = "block";
         document.getElementById("tituloJuego_2").style.display = "block";
         document.getElementById("juegoAlgoritmos").style.display = "block";
+        document.getElementById("tituloJuego_3").style.display = "block";
+        document.getElementById("juegoVariables").style.display = "block";
+        document.getElementById('sepa_1_juegos').style.display = "block";
+        document.getElementById('sepa_2_juegos').style.display = "block";
         mensajeJuego();
     }
 
