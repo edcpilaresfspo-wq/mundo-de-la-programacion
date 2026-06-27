@@ -257,6 +257,10 @@ input, select, button {
   display: none;
 }
 
+#tituloJuego_3{
+  display: none;
+}
+
 #mensaje_juego{
   background: #f4f4f4;
   padding: 20px;
@@ -272,6 +276,10 @@ input, select, button {
 }
 
 #juegoAlgoritmos{
+  display: none;
+}
+
+#juegoVariables{
   display: none;
 }
 
@@ -323,6 +331,13 @@ footer{
   border-top: 2px solid darkslategrey;  /*#3498db*/
   margin: 40px 0;
   width: 100%;
+}
+
+#sepa_1_juegos{
+  display: none;
+}
+#sepa_2_juegos{
+  display: none;
 }
 
 .parentesis{
