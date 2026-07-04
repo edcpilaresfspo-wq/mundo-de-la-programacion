@@ -65,7 +65,7 @@ document.getElementById('miFormularioDAJuego').addEventListener('submit', async 
         document.getElementById("juegoCondicionales_Bucles").style.display = "block";
         document.getElementById('sepa_1_juegos').style.display = "block";
         document.getElementById('sepa_2_juegos').style.display = "block";
-        document.getElementById('sepa_3_juegos').style.display = "block";
+        document.getElementById('sepa_3_juegos').style.display = "block"; /*ultimo separador*/
         mensajeJuego();
     }
 
