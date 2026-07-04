@@ -261,6 +261,10 @@ input, select, button {
   display: none;
 }
 
+#tituloJuego_4{
+  display: none;
+}
+
 #mensaje_juego{
   background: #f4f4f4;
   padding: 20px;
@@ -280,6 +284,10 @@ input, select, button {
 }
 
 #juegoVariables{
+  display: none;
+}
+
+#juegoCondicionales_Bucles{
   display: none;
 }
 
@@ -337,6 +345,9 @@ footer{
   display: none;
 }
 #sepa_2_juegos{
+  display: none;
+}
+#sepa_3_juegos{
   display: none;
 }
 
