@@ -15,9 +15,9 @@ async function cargarDatos() {
             return;
         }
         contenedorDD.innerHTML = `
-            <p><strong>${datos[0][0]}: </strong> ${datos[0][3]}</p>
+            <p><strong>${datos[0][0]}: </strong> ${datos[0][12]}</p>
         `;
-        const filasFiltradas = datos.filter(fila => fila[3] === valorBuscado1 || fila[3] === valorBuscado2);
+        const filasFiltradas = datos.filter(fila => fila[5] === valorBuscado1 || fila[5] === valorBuscado2);
         // cargar datos donde se renderiza correctamente el nombre [0]
         contenedor.innerHTML = `
               <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
