@@ -6,8 +6,8 @@ async function cargarDatos() {
         const datos = await res.json();
         const contenedor = document.getElementById('listaDatos');
         const contenedorDD = document.getElementById('datosDocente');
-        var valorBuscado1 = "Entre_semana";
-        var valorBuscado2 = "Fin_de_semana";
+        var valorBuscado1 = "Entre Semana";
+        var valorBuscado2 = "Fin De Semana";
         
         if(datos.length === 0) {
             
