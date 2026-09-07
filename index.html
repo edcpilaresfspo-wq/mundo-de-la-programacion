@@ -32,22 +32,82 @@
       </section>
     </header>
     <main>
-      <section>
-        <h2 id="tituloFormulario">Datos para el registro del Usuario</h2>
-        <form id="miFormulario">
-            <input type="text" id="nombre" placeholder="Nombre Completo" required>
-            <p><b>Nota:</b> Solamente cada primera letra de sus nombres y apellidos deben ir en mayuscula.</p>
+      <section id="menuDecision" class="oculto">
+        <h2>¿Qué tipo de registro deseas realizar?</h2>
+        <button id="btnIrFormWeb" class="btnIrFW">Registrarme en la Web (Crear cuenta)</button>
+        <button id="btnIrFormCurso" class="btnIrFC">Registrarme para un Curso</button>
+      </section>
+      <section id="formRegistroWeb" class="oculto">
+        <h2 id="tituloFormularioRU">Datos para el registro del Usuario</h2>
+        <form id="miFormularioRU">
+          <fieldset>
+            <legend>Informacion del Usuario</legend>
+            <input type="text" id="primerNombre" placeholder="Primer Nombre" required>
+            <p><b>Nota:</b> Solamente la primera letra de su primer nombre debe ir en mayúscula.</p>
+            <input type="text" id="segundoNombre" placeholder="Segundo Nombre" required>
+            <p><b>Nota:</b> Solamente la primera letra de su segundo nombre debe ir en mayúscula. En el caso de no tener debe colocar las letras: NP.</p>
+            <input type="text" id="primerApellido" placeholder="Primer Apellido" required>
+            <p><b>Nota:</b> Solamente la primera letra de su primer apellido debe ir en mayúscula.</p>
+            <input type="text" id="segundoApellido" placeholder="Segundo Apellido" required>
+            <p><b>Nota:</b> Solamente la primera letra de su segundo apellido debe ir en mayúscula. En el caso de no tener debe colocar las letras: NP.</p>
             <input type="text" id="folio" placeholder="Folio Pilares" required>
             <p><b>Nota:</b> Todas las letras de su folio pilares deben ir en mayúscula.</p>
             <input type="text" id="correo" placeholder="Correo Electrónico" required>
             <p><b>Nota:</b> Todas las letras de su correo electrónico deben ir en minúscula.</p>
+            <input type="text" id="telefono" placeholder="Número de Telefono" required>
+            <p><b>Nota:</b> No debe colocar el código del pais (+52), a menos que sea un numero que no sea del pais.</p>
+            <select id="perfil" required>
+              <option value="">Selecciona tu perfil</option>
+              <option value="Docente">Docente</option>
+              <option value="Estudiante">Estudiante</option>
+              <option value="Visitante">Visitante</option>
+            </select>
+            <p><b>Nota:</b></p>
+            <p>El perfil "<b>Docente</b>", es para quienes impartiran un curso.</p>
+            <p>El perfil "<b>Estudiante</b>", es para quienes participaran en un curso.</p>
+            <p>El perfil "<b>Visitante</b>", es para quienes solo quieren informacion (de momento No participaran en un curso).</p>
+          </fieldset>
+          <button type="submit">Guardar Datos</button>
+        </form>
+      </section>
+      <section id="formRegistroCurso" class="oculto">
+        <h2 id="tituloFormularioRC">Datos para el registro en este Ciclo</h2>
+        <form id="miFormularioRUC">
+          <!-- CAMBIO AQUÍ: Mensaje intuitivo con enlace de acción directa -->
+          <div class="alerta-registro">
+            <p>⚠️ Para registrarte en un curso de este ciclo, debes tener una cuenta en esta Web.</p>
+            <button type="button" id="btnCambiarARegistroWeb" class="btn-enlace">¿No tienes cuenta? Regístrate aquí</button>
+          </div>
+          <fieldset>
+            <legend>Dato del Usuario</legend>
+            <input type="text" id="folioRUC" placeholder="Folio Pilares" required>
+            <p><b>Nota:</b> Recuerde que las letras de su folio pilares deben ir en mayúscula.</p>
+          </fieldset>
+          <fieldset>
+            <legend>Informacion del Curso</legend>
+            <select id="curso" required>
+              <option value="">Selecciona tu curso</option>
+            </select>
+            <select id="modalidad" required>
+              <option value="">Selecciona la modalidad</option>
+            </select>
             <select id="grupo" required>
               <option value="">Selecciona tu grupo</option>
-              <option value="Entre_semana">Entre semana</option>
-              <option value="Fin_de_semana">Fin de semana</option>
             </select>
-            <button type="submit">Guardar Datos</button>
+          </fieldset>
+          <fieldset>
+            <legend>Informacion adicional</legend>
+            <select id="pre" required>
+              <option value="">Cuenta con un pre-registro?</option>
+              <option value="Con_pre_registro">Si me pre-registre</option>
+              <option value="Sin_pre_registro">No me pre-registre</option>
+            </select>
+            <p><b>Nota:</b> El <i>pre-registro</i> se obtiene si ingreso a la web de <i>Pilares en Linea</i>, selecciono el curso en el cual se desea registrar y le proporcionaron los datos de acceso al meet.</p>
+          </fieldset>
+          <button type="submit">Registrarme al Curso</button>
         </form>
+      </section>
+      <section>
         <img src="./img/unidad_0.png" alt="Unidad Cero." class="ima_unidad_0" id="imaUnidad0">
         <p id="mensaje_bienvenida"></p>
         <script src="./js/script.js" type="text/javascript"></script>
