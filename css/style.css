@@ -99,7 +99,7 @@ h2{
     margin-left: 60px;
 }
 /* Estilos del botón de registro*/
-.btn_registro{
+.btn_registro, .btnIrFW, .btnIrFC{
   background-color: cadetblue; /* Azul moderno #2563eb*/
   color: darkslategrey;
   font-size: 1rem;
@@ -123,7 +123,7 @@ h2{
 }
 
 /* Efecto al hacer clic */
-.btn_registro:active {
+.btn_registro:active, .btnIrFW:active, .btnIrFC:active {
   transform: translateY(0);
 }
 
@@ -200,6 +200,10 @@ form, .datos {
   text-align: left;
 }
 
+fieldset{
+  margin-bottom: 20px;
+}
+
 input, select, button {
   max-width: 500px;
   width: 100%;
@@ -224,12 +228,48 @@ input, select, button {
   font-size: 18px;
 }
 
-#tituloFormulario{
-  display: none;
+.oculto{
+  display: none !important;
 }
 
-#miFormulario{
-  display: none;
+/* estilo para botones de registro (menu de desicion)*/
+/* Efecto al pasar el mouse */
+.btnIrFW:hover, .btnIrFC:hover{
+  background-color: #53868B; /* el utilizado es: Cadet Blue 5. Inicilmente use Azul #1d4ed8*/
+  color: dimgrey;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* estilo para el boton de crear cuenta, cuando se esta en el formulario del curso.*/
+.alerta-registro {
+  background-color: #fff3cd; /* Fondo amarillo suave de advertencia */
+  border-left: 4px solid #ffc107;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.alerta-registro p {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #856404;
+}
+
+/* Transforma el botón para que parezca un enlace web interactivo */
+.btn-enlace {
+  background: none;
+  border: none;
+  color: #0056b3;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-enlace:hover {
+  color: #00356b;
 }
 
 .ima_unidad_0{
