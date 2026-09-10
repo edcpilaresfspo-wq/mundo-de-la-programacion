@@ -30,7 +30,7 @@ document.getElementById('miFormularioDAJuego').addEventListener('submit', async 
             const resultado = await respuestaValidacion.json();
     
             if (!resultado.existe) {
-                alert(`El folio ingresado ( "${folio}" ) No esta registrado.`);
+                alert(`El folio ingresado ( "${folio}" ) No esta registrado en un curso para este ciclo. Puedes registrarte por medio del menu "Inicio" y presionando en el boton "Registrate". Si ya realizaste el registro en este ciclo valida tu folio correcto e intentalo nuevamente.`);
                 boton.disabled = false;
                 boton.innerText = textoOriginal;
                 return; // Detiene el acceso al juego
