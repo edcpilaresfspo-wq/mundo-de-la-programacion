@@ -200,6 +200,20 @@ btnCambiarARegistroWeb.addEventListener('click', () => {
   document.getElementById("miFormulario").style.display = "block";*/
 });
 
+// Datos de la fecha y la hora actual
+let datoFechaHora = "Nada";
+function fechaConHora(){
+  console.log("mes en numero: "+mesNum);
+  let mesActual = mesNum + 1;  console.log("mes actual en numero: "+mesActual);
+  if(dia < 10 && mesActual >= 10){
+      datoFechaHora = "0"+dia+"-"+mesActual+"-"+año+" "+horas+":"+minutos+":"+segundos;
+  }else if(dia >= 10 && mesActual < 10){
+      datoFechaHora = dia+"-0"+mesActual+"-"+año+" "+horas+":"+minutos+":"+segundos;
+  }else if(dia < 10 && mesActual < 10){
+      datoFechaHora = "0"+dia+"-0"+mesActual+"-"+año+" "+horas+":"+minutos+":"+segundos;
+  }
+}
+
 // Guardar datos
 document.getElementById('miFormularioRU').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -221,15 +235,8 @@ document.getElementById('miFormularioRU').addEventListener('submit', async (e) =
     const telefono = document.getElementById('telefono').value.trim();
     const perfil = document.getElementById('perfil').value.trim(); // este ID se MODIFICO
 
-    let datoFechaHora = "Nada";
-    if(dia < 10 && mesNum >= 10){
-        datoFechaHora = "0"+dia+"-"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
-    }else if(dia >= 10 && mesNum < 10){
-        datoFechaHora = dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
-    }else if(dia < 10 && mesNum < 10){
-        datoFechaHora = "0"+dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
-    }
-
+    fechaConHora(); // se llama a la funcion para que genere el dato de la fecha y la hora actual.
+    
     // Valida si el código (folio) ya existe en Google Sheets
     try {
         const respuestaValidacion = await fetch(`${URL_API}?verificarCodigo=${encodeURIComponent(folio)}`);
@@ -292,15 +299,8 @@ document.getElementById('miFormularioRUC').addEventListener('submit', async (e) 
     let nomenclatura = "";
     const pre = document.getElementById('pre').value.trim();
 
-    let datoFechaHora = "Nada";
-    if(dia < 10 && mesNum >= 10){
-        datoFechaHora = "0"+dia+"-"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
-    }else if(dia >= 10 && mesNum < 10){
-        datoFechaHora = dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
-    }else if(dia < 10 && mesNum < 10){
-        datoFechaHora = "0"+dia+"-0"+mesNum+"-"+año+" "+horas+":"+minutos+":"+segundos;
-    }
-
+    fechaConHora(); // se llama a la funcion para que genere el dato de la fecha y la hora actual
+    
     // Valida si el código (folio) ya existe en Google Sheets
     try {
         const respuestaValidacion = await fetch(`${URL_API}?verificarCodigoDos=${encodeURIComponent(folioRUC)}`);
