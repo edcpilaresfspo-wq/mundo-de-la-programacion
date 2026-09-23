@@ -57,9 +57,9 @@ document.getElementById('miFormularioDAJuego').addEventListener('submit', async 
         document.getElementById("tituloJuego_1").style.display = "block";
         document.getElementById("mensaje_juego").style.display = "block";
         document.getElementById("juegoBienvenidos").style.display = "block";
-        /*document.getElementById("tituloJuego_2").style.display = "block";
+        document.getElementById("tituloJuego_2").style.display = "block";
         document.getElementById("juegoAlgoritmos").style.display = "block";
-        document.getElementById("tituloJuego_3").style.display = "block";
+        /*document.getElementById("tituloJuego_3").style.display = "block";
         document.getElementById("juegoVariables").style.display = "block";
         document.getElementById("tituloJuego_4").style.display = "block";
         document.getElementById("juegoCondicionales_Bucles").style.display = "block";
