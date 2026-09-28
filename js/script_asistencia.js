@@ -173,9 +173,9 @@ document.getElementById('miFormularioDAsistencia').addEventListener('submit', as
             return;
         }
 
-    if (grupo === "EDCIP10626") {
+    if (grupo === "EDCIP10926") {
       tipo = "Grupo_1";
-    }else if (grupo === "EDCIP30626") {
+    }else if (grupo === "EDCIP30926") {
       tipo = "Grupo_2";
     }
     // Si el código (folio) no esta en Google Sheets , se guarda
