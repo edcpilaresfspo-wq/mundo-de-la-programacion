@@ -63,10 +63,10 @@ document.getElementById('miFormularioDAJuego').addEventListener('submit', async 
         document.getElementById('sepa_2_juegos').style.display = "block"; // penultimo separador, entre juego 2 y 3
         document.getElementById("tituloJuego_3").style.display = "block";
         document.getElementById("juegoVariables").style.display = "block";
-        /*document.getElementById('sepa_1_juegos').style.display = "block"; // primer separador, entre juego 3 y4
+        document.getElementById('sepa_1_juegos').style.display = "block"; // primer separador, entre juego 3 y 4
         document.getElementById("tituloJuego_4").style.display = "block";
         document.getElementById("juegoCondicionales_Bucles").style.display = "block";    
-        */
+        
         mensajeJuego();
     }
 
