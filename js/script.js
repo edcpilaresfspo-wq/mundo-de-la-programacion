@@ -211,7 +211,9 @@ function fechaConHora(){
       datoFechaHora = dia+"-0"+mesActual+"-"+año+" "+horas+":"+minutos+":"+segundos;
   }else if(dia < 10 && mesActual < 10){
       datoFechaHora = "0"+dia+"-0"+mesActual+"-"+año+" "+horas+":"+minutos+":"+segundos;
-  }
+  }else{
+        datoFechaHora = dia+"-"+mesActual+"-"+año+" "+horas+":"+minutos+":"+segundos;
+      }
 }
 
 // Guardar datos
