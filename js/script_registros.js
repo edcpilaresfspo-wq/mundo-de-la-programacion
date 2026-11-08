@@ -11,8 +11,14 @@ async function cargarDatos() {
         
         if(datos.length === 0) {
             contenedorDD.innerHTML = "No hay informacion por el momento.";
-            contenedor.innerHTML = "De momento no hay usuarios registrados.";
+            contenedor.innerHTML = "De momento no hay usuarios registrados ya que <b>aun no se carga</b> un curso para este ciclo..";
             return;
+        }else if(datos.length === 1){
+          contenedorDD.innerHTML = `
+              <p><strong>${datos[0][0]}: </strong> ${datos[0][12]}</p>
+          `;
+          contenedor.innerHTML = "Aun no hay usuarios registrados. Si quieres ser el primero puedes ir al menu <b>Inicio</b> en el boton <b>Registrate</b> y formaliza tu registro.";
+          return;
         }
         contenedorDD.innerHTML = `
             <p><strong>${datos[0][0]}: </strong> ${datos[0][12]}</p>
