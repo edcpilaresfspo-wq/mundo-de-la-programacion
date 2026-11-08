@@ -10,8 +10,8 @@ async function cargarDatos() {
         var valorBuscado2 = "Fin De Semana";
         
         if(datos.length === 0) {
-            
-            contenedor.innerHTML = "No hay datos guardados aún.";
+            contenedorDD.innerHTML = "No hay informacion por el momento.";
+            contenedor.innerHTML = "De momento no hay usuarios registrados.";
             return;
         }
         contenedorDD.innerHTML = `
