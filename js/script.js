@@ -164,7 +164,7 @@ btnIrFormCurso.addEventListener('click', async (e) => {
       datosServidor = await respuestaVCA.json();
 
       if (datosServidor.length === 0) {
-          alert(`No hay un curso ( "${estatusG}" ).`);
+          alert(`No hay un curso ${estatusG}.`);
           formRegistroCurso.classList.add('oculto');
           document.getElementById("mensaje_bienvenida").style.display = "block";
           mensajeCursosNoActivos();
